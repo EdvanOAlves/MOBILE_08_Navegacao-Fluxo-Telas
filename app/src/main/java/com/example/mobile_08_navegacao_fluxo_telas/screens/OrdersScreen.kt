@@ -14,24 +14,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun OrdersScreen(modifier: Modifier = Modifier) {
+fun OrdersScreen(modifier: Modifier = Modifier, navController: NavController, orderMessage:String) {
     Box(
         modifier = Modifier.fillMaxSize()
-            .background(Color(0xFFCE0432)) //TODO: Puxar o tom de cinza que o professor utilizou
+            .background(Color(0xFFAFAFAF)) //TODO: Puxar o tom de cinza que o professor utilizou
             .padding(32.dp),
 
         ){
         Text(
-            text = "Pedidos",
+            text = "Pedidos - $orderMessage",
             fontWeight = FontWeight.Bold,
             fontSize = 24.sp,
             color = Color.White
         )
 
         Button(
-            onClick = {/* TODO */},
+            onClick = {navController.popBackStack()},
             colors = ButtonDefaults.buttonColors(
                 Color.White
             ),

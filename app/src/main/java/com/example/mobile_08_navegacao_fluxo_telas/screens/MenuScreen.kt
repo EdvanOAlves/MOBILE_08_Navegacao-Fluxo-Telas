@@ -17,9 +17,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun MenuScreen(modifier: Modifier = Modifier) {
+fun MenuScreen(modifier: Modifier = Modifier, navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -43,7 +44,8 @@ fun MenuScreen(modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Button(
-                onClick = {/* TODO */ },
+                // o Maria vai ser o campo nome especificado na rota pelo main activity
+                onClick = {navController.navigate("profile/Maria/23")},
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 ),
@@ -58,7 +60,7 @@ fun MenuScreen(modifier: Modifier = Modifier) {
             }
 
             Button(
-                onClick = {/* TODO */ },
+                onClick = {navController.navigate("orders?orderCount=1234")},
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 ),
@@ -72,7 +74,7 @@ fun MenuScreen(modifier: Modifier = Modifier) {
                 )
             }
             Button(
-                onClick = {/* TODO */ },
+                onClick = {navController.popBackStack()},
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 ),
